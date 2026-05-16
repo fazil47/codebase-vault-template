@@ -1,0 +1,16 @@
+/* Show only the SVG export matching the active Obsidian theme.
+   Used by Templates/insert-excalidraw-dual.md, which inserts:
+   - <drawing>.excalidraw.dark.svg
+   - <drawing>.excalidraw.light.svg
+   - a visible link back to <drawing>.excalidraw.md */
+
+.theme-dark .internal-embed[src$=".excalidraw.light.svg"],
+.theme-light .internal-embed[src$=".excalidraw.dark.svg"] {
+  display: none !important;
+}
+
+/* Reading view can render embeds as plain images. */
+.theme-dark img[src*=".excalidraw.light.svg"],
+.theme-light img[src*=".excalidraw.dark.svg"] {
+  display: none !important;
+}

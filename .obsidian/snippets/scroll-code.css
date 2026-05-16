@@ -1,0 +1,33 @@
+/* Code blocks: don't wrap, scroll horizontally instead.
+ *
+ * Live Preview note: each code line is its own `.cm-line` div with no shared
+ * parent, so CSS still can't create one scrollbar for the whole block. The
+ * fallback for especially wide logs/tables is an HTML `<pre class="wide-pre">`
+ * block, which Obsidian can scroll like normal preformatted HTML.
+ * Reading view has a real <pre> wrapper, so we add overflow-x there.
+ */
+
+.wide-pre {
+    overflow-x: auto !important;
+    white-space: pre !important;
+    word-wrap: normal !important;
+}
+
+/* Live Preview / Source mode — no wrap inside code blocks */
+.HyperMD-codeblock,
+.HyperMD-codeblock.cm-line {
+    white-space: pre !important;
+    word-wrap: normal !important;
+}
+
+/* Reading mode — no wrap + horizontal scrollbar */
+.markdown-preview-view pre,
+.markdown-rendered pre {
+    overflow-x: auto !important;
+}
+
+.markdown-preview-view pre > code,
+.markdown-rendered pre > code {
+    white-space: pre !important;
+    word-wrap: normal !important;
+}
