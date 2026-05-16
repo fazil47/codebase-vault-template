@@ -23,5 +23,5 @@ if (missing.length) {
 
 tR += `![[${dark}]]\n`;
 tR += `![[${light}]]\n`;
-tR += `[[${file.path}|Edit in Excalidraw]]\n`;
+tR += `%% [[${file.path}|Edit in Excalidraw]] %%\n`;
 %>
